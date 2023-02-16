@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getAllPost = async (data) => {
-    const response = await axios.get(`${process.env.REACT_APP_API}/posts?search=${search}&minWeight=${minWeight}&maxWeight=${maxWeight}&style=${style}&size=${size}&onlyAvailable=${onlyAvailable}`);
+    const response = await axios.get(`${process.env.REACT_APP_API}/posts`);
     return response.data;
 }
 

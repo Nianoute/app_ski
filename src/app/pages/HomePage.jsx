@@ -1,24 +1,33 @@
 // import PostList from "../components/post/PostList"
-import {getAllPost} from "../../setup/services/post.service"
+import {getAllPosts} from "../../setup/services/post.service"
 import { useEffect, useState } from 'react';
+import { weightOptions, styleOptions, sizeOptions } from "../constants/constant";
 
 const HomePage = () => {
+  const [posts, setPosts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [selectedWeightIndex, setSelectedWeightIndex] = useState(0);
+  const [style, setStyle] = useState("All");
+  const [size, setSize] = useState(0);
+  const [onlyAvailable, setOnlyAvailable] = useState(false);
 
-    const [posts, setPosts] = useState([]);
-  
-    useEffect(() => {
-      fetchAllPosts()
-      console.log(fetchAllPosts())
-    }, []);
-  
-    const fetchAllPosts = async () => {
-      try{
-        const response = await getAllPost()
-        setPosts([...response.products]);
-      } catch(err){
-        console.log(err);
-      }
-    }
+  useEffect(() => {
+    const filter = {
+      search,
+      minWeight: weightOptions[selectedWeightIndex].minWeight,
+      maxWeight: weightOptions[selectedWeightIndex].maxWeight,
+      style,
+      size,
+      onlyAvailable,
+    };
+    getAllPosts(filter)
+      .then((posts) => {
+        setPosts([...posts]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [search, selectedWeightIndex, style, size, onlyAvailable]);
 
 
     return (
@@ -28,9 +37,8 @@ const HomePage = () => {
             <div>Aucun résultat</div>
             )}
                     {posts.map((post) => (
-                        <div>{post.title}</div>
+                        <div>{post?.title}</div>
                 ))}
-            {/* <PostList></PostList> */}
         </div>
     )
 }

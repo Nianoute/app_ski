@@ -1,6 +1,8 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter } from "react-router-dom";
 import MainRouter from "./app/routers/MainRouter";
+import MainLayout from "./app/layout/MainLayout";
+
 const primaryTheme = createTheme({
   palette: {
     primary: {
@@ -14,7 +16,9 @@ function App() {
     <div className="App">
       <ThemeProvider theme={primaryTheme}>
         <BrowserRouter>
+          <MainLayout>
             <MainRouter />
+          </MainLayout>   
         </BrowserRouter>
       </ThemeProvider>
     </div>

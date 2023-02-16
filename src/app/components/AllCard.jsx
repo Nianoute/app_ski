@@ -19,7 +19,7 @@ export default function AllCard({post}) {
           {post.description}
         </Typography>
         <Typography variant="body1" color="black">
-          {post.price}€, {post.style}, {post.size}kg
+          {post.price}€, {post.style}, {post.size}cm, {post.weight}kg
         </Typography>
       </CardContent>
       <CardActions>

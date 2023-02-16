@@ -2,9 +2,9 @@ import {
   Box,
   Typography,
   Grid,
-  Link
 } from "@mui/material";
 
+import { Link } from "react-router-dom";
 import {getAllPosts} from "../../setup/services/post.service"
 import { useEffect, useState } from 'react';
 import { weightOptions, styleOptions, sizeOptions } from "../constants/constant";

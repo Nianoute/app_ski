@@ -8,6 +8,7 @@ const MainRouter = () => {
             <Routes>
                 <Route path="/" element={<HomePage/>} />
                 <Route path="/:id" element={<OnePostPage />} />
+                <Route path="/newshop" element={<OnePostPage />} />
             </Routes>
         </>
     )

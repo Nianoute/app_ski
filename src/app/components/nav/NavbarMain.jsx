@@ -17,7 +17,7 @@ const NavbarMain = () => {
       <Typography variant="p" to="/" component={Link}>
         Home
       </Typography>
-      <Typography variant="p" to="/qhop" component={Link}>
+      <Typography variant="p" to="/newshop" component={Link}>
         Créer une boutique
       </Typography>
     </Box>

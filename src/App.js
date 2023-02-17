@@ -13,7 +13,6 @@ const primaryTheme = createTheme({
 
 function App() {
   return (
-    <div className="App">
       <ThemeProvider theme={primaryTheme}>
         <BrowserRouter>
           <MainLayout>
@@ -21,7 +20,6 @@ function App() {
           </MainLayout>   
         </BrowserRouter>
       </ThemeProvider>
-    </div>
   );
 }
 export default App;

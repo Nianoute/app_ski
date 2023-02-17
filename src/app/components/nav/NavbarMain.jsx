@@ -20,6 +20,9 @@ const NavbarMain = () => {
       <Typography variant="p" to="/newshop" component={Link}>
         Créer une boutique
       </Typography>
+      <Typography variant="p" to="/shop" component={Link}>
+        Toutes les boutiques
+      </Typography>
     </Box>
   );
 };

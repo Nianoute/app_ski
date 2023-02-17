@@ -6,13 +6,12 @@ const getAllPosts = async (
     minWeight: 0,
     maxWeight: 1000,
     style: "",
-    size: "",
-    onlyAvailable: false,
+    size: ""
   }
 ) => {
-  const { search, minWeight, maxWeight, style, size, onlyAvailable } = filter;
+  const { search, minWeight, maxWeight, style, size} = filter;
   const response = await axios.get(
-    `${process.env.REACT_APP_API}/posts?search=${search}&minWeight=${minWeight}&maxWeight=${maxWeight}&style=${style}&size=${size}&onlyAvailable=${onlyAvailable}`
+    `${process.env.REACT_APP_API}/posts?search=${search}&minWeight=${minWeight}&maxWeight=${maxWeight}&style=${style}&size=${size}`
   );
   return response.data;
 };

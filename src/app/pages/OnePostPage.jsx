@@ -193,12 +193,15 @@ const OnePostPage = () => {
               Poids: {post.weight}kg - Taille: {post.size}cm - Style:{" "}
               {post.style}
             </Typography>
-        </CardContent>
-         
+            <Typography
+              variant="p"
+              sx={{ fontSize: 18, mb: 2, display: "block" }}
+            >
+              {post.description} 
+            </Typography>
 
-          {/*///////////////////////////////////////////Booking/////////////////////////////////////// */}
-
-        {post.isAvailable && (
+              {/*///////////////////////////////////////////Booking/////////////////////////////////////// */}
+            {post.isAvailable && (
               <Box
                 component={"form"}
                 sx={{ display: "flex", gap: 2 }}
@@ -228,6 +231,8 @@ const OnePostPage = () => {
                 </Button>
               </Box>
             )}
+        </CardContent>
+         
         </Box>
         
       )}

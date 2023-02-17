@@ -1,8 +1,8 @@
 const weightOptions = [
-    { minWeight: 0, maxWeight: 1000 },
+    { minWeight: 0, maxWeight: 200 },
     { minWeight: 0, maxWeight: 45 },
     { minWeight: 45, maxWeight: 65 },
-    { minWeight: 65, maxWeight: 1000 },
+    { minWeight: 65, maxWeight: 200 },
   ];
   
   const styleOptions = ["Freeride", "Freestyle", "Piste", "Polyvalent"];

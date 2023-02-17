@@ -21,7 +21,6 @@ const AllPost = () => {
   const [selectedWeightIndex, setSelectedWeightIndex] = useState(0);
   const [style, setStyle] = useState("All");
   const [size, setSize] = useState(0);
-  const [onlyAvailable, setOnlyAvailable] = useState(false);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -39,10 +38,6 @@ const AllPost = () => {
     setSize(e.target.value);
   };
 
-  const handleOnlyAvailable = (e) => {
-    setOnlyAvailable(e.target.checked);
-  };
-
 
   useEffect(() => {
     const filter = {
@@ -50,8 +45,7 @@ const AllPost = () => {
       minWeight: weightOptions[selectedWeightIndex].minWeight,
       maxWeight: weightOptions[selectedWeightIndex].maxWeight,
       style,
-      size,
-      onlyAvailable,
+      size
     };
     getAllPosts(filter)
       .then((posts) => {
@@ -60,7 +54,7 @@ const AllPost = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [search, selectedWeightIndex, style, size, onlyAvailable]);
+  }, [search, selectedWeightIndex, style, size]);
 
 
     return (
